@@ -18,6 +18,7 @@ const http = require('http');
 const os = require('os');
 
 const port = process.env.PORT || 8080;
+const version = process.env.VERSION || "1.0.0";
 
 process.on('SIGINT', function() {
   console.log('shutting down...');
@@ -27,7 +28,7 @@ process.on('SIGINT', function() {
 var handleRequest = function(request, response) {
   console.log(`Received request for URL: ${request.url}`);
   response.writeHead(200);
-  response.end(`Hello, World!\nHostname: ${os.hostname()}\n`);
+  response.end(`Hello, World!\nHostname: ${os.hostname()}\nVersion: ${version}\n`);
 };
 
 var www = http.createServer(handleRequest);
