@@ -18,7 +18,7 @@ const http = require('http');
 const os = require('os');
 
 const port = process.env.PORT || 8080;
-const version = process.env.VERSION || "1.1.0";
+const version = process.env.VERSION || "2.1.0";
 
 process.on('SIGINT', function() {
   console.log('shutting down...');
